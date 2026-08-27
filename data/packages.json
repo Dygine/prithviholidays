@@ -1279,7 +1279,61 @@
       "sort": 9,
       "createdAt": "2026-08-27T00:00:00.000Z",
       "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "hanimoon-package",
+      "name": "Hanimoon package",
+      "slug": "hanimoon-package",
+      "destinationId": "dst-kuduremuka",
+      "categoryId": "cat-hills",
+      "shortDescription": "ksdf kg jksdfhkj",
+      "description": "kjdsfgksd fsdohflkdsjfh",
+      "image": "images/aihole.jpg",
+      "gallery": [
+        "uploads/20260827-259e5b3dbb.jpg"
+      ],
+      "duration": "3",
+      "guests": "2+ Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": true,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "sunricxe"
+      ],
+      "inclusions": [
+        ""
+      ],
+      "exclusions": [
+        ""
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "",
+          "description": "",
+          "location": "",
+          "activities": [],
+          "image": ""
+        },
+        {
+          "day": 2,
+          "title": "",
+          "description": "",
+          "location": "",
+          "activities": [],
+          "image": ""
+        }
+      ],
+      "sort": 10,
+      "createdAt": "2026-08-27T11:53:01.156Z",
+      "updatedAt": "2026-08-27T11:54:49.403Z"
     }
   ],
-  "updatedAt": "2026-08-27T12:03:17.198Z"
+  "updatedAt": "2026-08-27T12:15:26.090Z"
 }

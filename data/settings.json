@@ -357,10 +357,10 @@
     "siteUrl": "https://prithviholidays.com"
   },
   "enquiry": {
-    "endpoint": "",
+    "endpoint": "https://formspree.io/f/xppzaojj",
     "successTitle": "Thank you! Your enquiry is on its way",
     "successBody": "We'll reply within one business day.",
     "note": "Leave endpoint empty to store enquiries in the visitor's browser. Set it to a Formspree / Google Apps Script / serverless URL to receive them live."
   },
-  "updatedAt": "2026-08-27T10:01:39.209Z"
+  "updatedAt": "2026-08-27T12:15:26.089Z"
 }

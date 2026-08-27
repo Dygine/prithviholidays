@@ -39,16 +39,16 @@
   ],
   "categories": [
     {
-      "id": "cat-family",
-      "name": "Family",
-      "slug": "family",
+      "id": "cat-romance",
+      "name": "Romance",
+      "slug": "romance",
       "active": true,
       "sort": 0
     },
     {
-      "id": "cat-romance",
-      "name": "Romance",
-      "slug": "romance",
+      "id": "cat-family",
+      "name": "Family",
+      "slug": "family",
       "active": true,
       "sort": 1
     },
