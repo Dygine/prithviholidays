@@ -16,6 +16,7 @@ wrangler.toml
 .gitignore
 .env
 .env.example
+PASSCODE.txt
 
 lib/
 api/
@@ -25,7 +26,12 @@ dev-server.mjs
 
 package.json
 vercel.json
-_headers
 README.md
 DEPLOY.md
 CLIENT-GUIDE.md
+
+# _headers must NOT be listed here.
+# Cloudflare never serves it to visitors anyway — it reads the file and
+# applies its rules to the static asset responses. Excluding it means
+# Cloudflare never receives it, so the cache and security headers silently
+# stop working. Same applies to _redirects if you ever add one.
