@@ -214,6 +214,31 @@
   PAGES.index = PAGES.home;
 
   /* ══════════════════════════════════════════════════════════════════════
+     404
+     ══════════════════════════════════════════════════════════════════ */
+
+  PAGES.notfound = function () {
+    boot(['packages']).then(function (d) {
+      var s = d.settings;
+      chrome(s, d.destinations);
+      seo({
+        title: 'Page not found — ' + (s.businessName || 'Prithvi Holidays'),
+        description: 'That page could not be found. Browse our India travel packages instead.',
+        noindex: true
+      });
+
+      /* Offer a way onward rather than a dead end: featured packages, or the
+         first few published ones when nothing is featured. */
+      var live = PH.get.published(d.packages);
+      var picks = live.filter(function (p) { return p.featured; });
+      if (picks.length < 3) { picks = live; }
+
+      paint('[data-pkg-grid]', picks.slice(0, 3).map(R.packageCard).join(''));
+      FX.refresh();
+    });
+  };
+
+  /* ══════════════════════════════════════════════════════════════════════
      DESTINATIONS
      ══════════════════════════════════════════════════════════════════ */
 

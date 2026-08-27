@@ -242,7 +242,189 @@ window.Store = (function () {
   }
 
   /* ══════════════════════════════════════════════════════════════════════
-     3. PUBLISH
+     PHOTOS
+
+     A browser cannot write a file onto the web server, so an uploaded photo
+     takes the same road as the text: it waits in the draft, then rides to
+     GitHub with the next publish.
+
+     Two details that matter:
+
+       • Photos live in IndexedDB, not localStorage. localStorage caps out
+         around 5 MB and holds strings only — three phone photos would fill
+         it and break every save. IndexedDB has room and does not block.
+
+       • Every photo is resized to 1400px and re-encoded as JPEG before it
+         is stored. A 6 MB phone photo becomes roughly 200 KB, which keeps
+         the repository sane and the site fast. This is the same shrinking a
+         server would do, done here because there is no server.
+     ══════════════════════════════════════════════════════════════════ */
+
+  var DB_NAME = 'ph-photos';
+  var DB_STORE = 'photos';
+  var MAX_WIDTH = 1400;
+  var JPEG_QUALITY = 0.84;
+  var MAX_UPLOAD = 12 * 1024 * 1024;
+
+  var dbPromise = null;
+
+  function openDB() {
+    if (dbPromise) { return dbPromise; }
+    dbPromise = new Promise(function (resolve, reject) {
+      if (!window.indexedDB) { reject(new Error('This browser has no IndexedDB.')); return; }
+      var req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = function () {
+        if (!req.result.objectStoreNames.contains(DB_STORE)) {
+          req.result.createObjectStore(DB_STORE);
+        }
+      };
+      req.onsuccess = function () { resolve(req.result); };
+      req.onerror = function () { reject(req.error || new Error('IndexedDB refused to open.')); };
+    });
+    return dbPromise;
+  }
+
+  function idb(mode, fn) {
+    return openDB().then(function (d) {
+      return new Promise(function (resolve, reject) {
+        var tx = d.transaction(DB_STORE, mode);
+        var req = fn(tx.objectStore(DB_STORE));
+        req.onsuccess = function () { resolve(req.result); };
+        req.onerror = function () { reject(req.error); };
+      });
+    });
+  }
+
+  function putPhoto(name, dataUrl) {
+    return idb('readwrite', function (s) { return s.put(dataUrl, name); });
+  }
+  function getPhoto(name) {
+    return idb('readonly', function (s) { return s.get(name); });
+  }
+  function allPhotoNames() {
+    return idb('readonly', function (s) { return s.getAllKeys(); }).catch(function () { return []; });
+  }
+  function deletePhoto(name) {
+    return idb('readwrite', function (s) { return s.delete(name); });
+  }
+  function clearPhotos() {
+    return idb('readwrite', function (s) { return s.clear(); }).catch(function () {});
+  }
+
+  /**
+   * Take a file from the user's computer, shrink it, and store it under a
+   * generated name. Resolves with that name, which is what goes into the JSON.
+   */
+  function addPhoto(file) {
+    return new Promise(function (resolve, reject) {
+      if (!file) { reject(new Error('No file was chosen.')); return; }
+      if (!/^image\//.test(file.type)) {
+        reject(new Error('That file is not an image. Use a JPG, PNG or WEBP.'));
+        return;
+      }
+      if (file.size > MAX_UPLOAD) {
+        reject(new Error('That photo is larger than 12 MB. Please compress it first.'));
+        return;
+      }
+
+      var reader = new FileReader();
+      reader.onerror = function () {
+        reject(new Error('That photo could not be read. Try another file.'));
+      };
+      reader.onload = function () {
+        var img = new Image();
+        img.onerror = function () {
+          reject(new Error('That photo could not be opened. It may be damaged.'));
+        };
+        img.onload = function () {
+          var w = img.naturalWidth;
+          var h = img.naturalHeight;
+          if (!w || !h) { reject(new Error('That photo has no size.')); return; }
+          if (w > MAX_WIDTH) { h = Math.round(h * (MAX_WIDTH / w)); w = MAX_WIDTH; }
+
+          var canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          var ctx = canvas.getContext('2d');
+          /* A white base, so a transparent PNG does not turn black as JPEG. */
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, w, h);
+          ctx.drawImage(img, 0, 0, w, h);
+
+          var stamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+          var rand = Math.random().toString(16).slice(2, 12);
+          var name = stamp + '-' + rand + '.jpg';
+          var dataUrl;
+          try {
+            dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+          } catch (e) {
+            reject(new Error('That photo could not be converted.'));
+            return;
+          }
+
+          putPhoto(name, dataUrl)
+            .then(function () {
+              emit('photos-changed');
+              resolve({ name: name, path: 'uploads/' + name, width: w, height: h,
+                bytes: Math.round(dataUrl.length * 0.75) });
+            })
+            .catch(function () {
+              reject(new Error('The photo could not be saved in this browser.'));
+            });
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /**
+   * Where an <img> should point for a given stored path.
+   * A photo waiting to be published is not on the server yet, so it is shown
+   * straight from IndexedDB — otherwise the admin would show a broken image
+   * for everything the user just added.
+   */
+  function resolveImage(pathValue) {
+    var v = String(pathValue || '');
+    if (!v) { return Promise.resolve(''); }
+    if (/^(https?:)?\/\//i.test(v) || v.indexOf('data:') === 0) {
+      return Promise.resolve(v);
+    }
+    var name = v.replace(/^uploads\//, '');
+    if (v.indexOf('uploads/') === 0) {
+      return getPhoto(name)
+        .then(function (dataUrl) { return dataUrl || BASE + v; })
+        .catch(function () { return BASE + v; });
+    }
+    return Promise.resolve(BASE + v.replace(/^\/+/, ''));
+  }
+
+  /** Photos held locally that no published page references yet. */
+  function pendingPhotos() {
+    return allPhotoNames().then(function (names) {
+      return (names || []).map(function (n) { return String(n); });
+    });
+  }
+
+  /** Drop stored photos that nothing in the data points at any more. */
+  function prunePhotos() {
+    var used = {};
+    function mark(v) {
+      if (typeof v === 'string' && v.indexOf('uploads/') === 0) {
+        used[v.replace('uploads/', '')] = true;
+      }
+    }
+    JSON.stringify(db, function (k, v) { mark(v); return v; });
+
+    return allPhotoNames().then(function (names) {
+      var dead = (names || []).filter(function (n) { return !used[String(n)]; });
+      return Promise.all(dead.map(function (n) { return deletePhoto(n); }))
+        .then(function () { return dead.length; });
+    }).catch(function () { return 0; });
+  }
+
+  /* ══════════════════════════════════════════════════════════════════════
+     PUBLISH
      ══════════════════════════════════════════════════════════════════ */
 
   function token() {
@@ -550,27 +732,79 @@ window.Store = (function () {
 
   function isLoggedIn() { return !!token(); }
 
-  /** Send only the changed files, as ONE commit. */
-  function publish(message) {
+  /**
+   * Collect everything that needs to go to the server: changed JSON files,
+   * plus any photo that is still only in this browser.
+   */
+  function buildPayload() {
     var names = changedFiles();
-    if (!names.length) { return Promise.resolve({ ok: true, nothing: true }); }
-
     var files = names.map(function (n) {
       return {
         path: 'data/' + n + '.json',
-        content: JSON.stringify(rewrap(n, db[n]), null, 2) + '\n'
+        content: JSON.stringify(rewrap(n, db[n]), null, 2) + '\n',
+        encoding: 'utf-8'
       };
     });
 
-    return api('publish', {
-      message: message || ('Update site content (' + names.join(', ') + ')'),
-      files: files
-    }).then(function (j) {
-      clean = clone(db);
-      try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
-      emit('published', j);
-      emit('change');
-      return j;
+    /* Only send photos the data actually references — a photo added and then
+       removed again should not be committed. */
+    var used = {};
+    JSON.stringify(db, function (k, v) {
+      if (typeof v === 'string' && v.indexOf('uploads/') === 0) {
+        used[v.replace('uploads/', '')] = true;
+      }
+      return v;
+    });
+
+    return allPhotoNames().then(function (stored) {
+      var wanted = (stored || []).map(String).filter(function (n) { return used[n]; });
+      return Promise.all(wanted.map(function (n) {
+        return getPhoto(n).then(function (dataUrl) {
+          if (!dataUrl) { return null; }
+          return {
+            path: 'uploads/' + n,
+            content: String(dataUrl).split(',')[1] || '',
+            encoding: 'base64'
+          };
+        });
+      })).then(function (photos) {
+        return {
+          names: names,
+          files: files.concat(photos.filter(Boolean)),
+          photoCount: photos.filter(Boolean).length
+        };
+      });
+    }).catch(function () {
+      return { names: names, files: files, photoCount: 0 };
+    });
+  }
+
+  /** Send the changed files and any new photos as ONE commit. */
+  function publish(message) {
+    return buildPayload().then(function (payload) {
+      if (!payload.files.length) { return { ok: true, nothing: true }; }
+
+      var summary = payload.names.join(', ');
+      if (payload.photoCount) {
+        summary += (summary ? ', ' : '') + payload.photoCount +
+          (payload.photoCount === 1 ? ' photo' : ' photos');
+      }
+
+      return api('publish', {
+        message: message || ('Update site content (' + summary + ')'),
+        files: payload.files
+      }).then(function (j) {
+        clean = clone(db);
+        try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+        /* The photos are on the server now, so the local copies are just
+           taking up space — and keeping them would mask a failed upload. */
+        return clearPhotos().then(function () {
+          emit('published', j);
+          emit('photos-changed');
+          emit('change');
+          return j;
+        });
+      });
     });
   }
 
@@ -604,7 +838,9 @@ window.Store = (function () {
 
     entries.forEach(function (e) {
       var name = enc.encode(e.name);
-      var data = enc.encode(e.content);
+      /* Photos arrive base64-encoded; unpack them to real bytes so the ZIP
+         holds a usable JPEG rather than a text file full of base64. */
+      var data = e.encoding === 'base64' ? b64ToBytes(e.content) : enc.encode(e.content);
       var crc = crc32(data);
 
       var local = [].concat(
@@ -643,7 +879,8 @@ window.Store = (function () {
     return FILES.map(function (n) {
       return {
         name: 'data/' + n + '.json',
-        content: JSON.stringify(rewrap(n, db[n]), null, 2) + '\n'
+        content: JSON.stringify(rewrap(n, db[n]), null, 2) + '\n',
+        encoding: 'utf-8'
       };
     });
   }
@@ -659,7 +896,32 @@ window.Store = (function () {
     setTimeout(function () { URL.revokeObjectURL(href); }, 1500);
   }
 
-  function exportZip() { download(zip(fileContents()), 'prithvi-holidays-data.zip'); }
+  /**
+   * The manual route when there is no publishing server: a ZIP holding the
+   * data files AND any photos still waiting, laid out exactly as they sit in
+   * the project so it can be unzipped straight over the top.
+   */
+  function exportZip() {
+    return buildPayload().then(function (payload) {
+      var byPath = {};
+      payload.files.forEach(function (f) { byPath[f.path] = f; });
+
+      var entries = fileContents();
+      /* Prefer the payload's version of a data file, then add the photos. */
+      entries = entries.map(function (e) { return byPath[e.name] ? byPath[e.name] : e; })
+        .map(function (e) {
+          return { name: e.name || e.path, content: e.content, encoding: e.encoding || 'utf-8' };
+        });
+
+      payload.files.filter(function (f) { return f.encoding === 'base64'; })
+        .forEach(function (f) {
+          entries.push({ name: f.path, content: f.content, encoding: 'base64' });
+        });
+
+      download(zip(entries), 'prithvi-holidays-data.zip');
+      return { photoCount: payload.photoCount };
+    });
+  }
 
   function exportOne(name) {
     var content = JSON.stringify(rewrap(name, db[name]), null, 2) + '\n';
@@ -1316,6 +1578,15 @@ window.Store = (function () {
     deleteMaster: deleteMaster,
     masterUsage: masterUsage,
     moveMaster: moveMaster,
+
+    // photos
+    addPhoto: addPhoto,
+    getPhoto: getPhoto,
+    deletePhoto: deletePhoto,
+    resolveImage: resolveImage,
+    pendingPhotos: pendingPhotos,
+    prunePhotos: prunePhotos,
+    clearPhotos: clearPhotos,
 
     // settings + enquiries + dashboard
     updateSettings: updateSettings,

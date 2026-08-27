@@ -21,6 +21,20 @@
      Shared helpers
      ══════════════════════════════════════════════════════════════════ */
 
+  /**
+   * A list thumbnail. Resolves photos that are still only in this browser,
+   * so something uploaded a moment ago appears in the list straight away
+   * rather than as a broken image until publish.
+   */
+  function thumb(cls, value) {
+    var im = el('img', {
+      class: cls, alt: '', loading: 'lazy',
+      onerror: function () { this.style.visibility = 'hidden'; }
+    });
+    if (value) { AUI.setImg(im, value); } else { im.style.visibility = 'hidden'; }
+    return im;
+  }
+
   /** Standard action buttons for a list row. */
   function rowActions(o) {
     var acts = el('div', { class: 'row-acts' });
@@ -451,10 +465,7 @@
           class: 'row-item', draggable: state.q || state.regionId ? 'false' : 'true'
         }, [
           el('span', { class: 'row-grip', html: icon('grip', 15), title: 'Drag to reorder' }),
-          el('img', {
-            class: 'row-thumb', src: AUI.imgSrc(d.image) || '', alt: '', loading: 'lazy',
-            onerror: function () { this.style.visibility = 'hidden'; }
-          }),
+          thumb('row-thumb', d.image),
           el('div', { class: 'row-main', html:
             '<b>' + esc(plain(d.name)) + '</b>' +
             '<div class="meta">' + meta.map(function (x) { return '<span>' + esc(x) + '</span>'; })
@@ -725,10 +736,7 @@
 
         rows.appendChild(el('div', { class: 'row-item', draggable: draggable ? 'true' : 'false' }, [
           el('span', { class: 'row-grip', html: icon('grip', 15), title: 'Drag to reorder' }),
-          el('img', {
-            class: 'row-thumb', src: AUI.imgSrc(p.image) || '', alt: '', loading: 'lazy',
-            onerror: function () { this.style.visibility = 'hidden'; }
-          }),
+          thumb('row-thumb', p.image),
           el('div', { class: 'row-main', html:
             '<b>' + esc(plain(p.name)) + '</b>' +
             '<div class="meta">' + meta.map(function (x) { return '<span>' + esc(x) + '</span>'; })
@@ -1293,10 +1301,7 @@
           featured: true, published: true };
       },
       row: function (row, a) {
-        row.appendChild(el('img', {
-          class: 'row-thumb', src: AUI.imgSrc(a.image) || '', alt: '', loading: 'lazy',
-          onerror: function () { this.style.visibility = 'hidden'; }
-        }));
+        row.appendChild(thumb('row-thumb', a.image));
         row.appendChild(el('div', { class: 'row-main', html:
           '<b>' + esc(plain(a.name)) + '</b>' +
           '<div class="excerpt">' + esc(plain(a.description)) + '</div>'
@@ -1345,11 +1350,7 @@
         return { name: '', location: '', quote: '', avatar: '', rating: 5, published: true };
       },
       row: function (row, t) {
-        row.appendChild(el('img', {
-          class: 'row-thumb row-thumb--round', src: AUI.imgSrc(t.avatar) || '',
-          alt: '', loading: 'lazy',
-          onerror: function () { this.style.visibility = 'hidden'; }
-        }));
+        row.appendChild(thumb('row-thumb row-thumb--round', t.avatar));
         row.appendChild(el('div', { class: 'row-main', html:
           '<b>' + esc(plain(t.name)) + '</b>' +
           '<div class="meta"><span>' + esc(plain(t.location)) + '</span>' +
@@ -1409,10 +1410,7 @@
           featured: true, published: true };
       },
       row: function (row, g) {
-        row.appendChild(el('img', {
-          class: 'row-thumb', src: AUI.imgSrc(g.image) || '', alt: '', loading: 'lazy',
-          onerror: function () { this.style.visibility = 'hidden'; }
-        }));
+        row.appendChild(thumb('row-thumb', g.image));
         row.appendChild(el('div', { class: 'row-main', html:
           '<b>' + esc(plain(g.title)) + '</b>' +
           '<div class="meta">' +

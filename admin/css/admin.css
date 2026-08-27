@@ -630,3 +630,41 @@ a.stat-tile:hover { box-shadow: var(--a-sh-2); transform: translateY(-2px); text
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* 20 ── Upload zone ======================================================
+   Added when photo upload went in. A drop target that is obviously
+   clickable, because most people will click rather than drag. */
+.uploadzone {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 22px 18px; text-align: center; cursor: pointer;
+  border: 2px dashed var(--a-line); border-radius: var(--a-r);
+  background: var(--a-surface-2); color: var(--a-text-soft);
+  transition: border-color .16s, background .16s, color .16s;
+}
+.uploadzone:hover, .uploadzone:focus-visible {
+  border-color: var(--a-blue); background: var(--a-info-bg); color: var(--a-ink-3);
+}
+.uploadzone.is-over {
+  border-color: var(--a-blue-deep); background: var(--a-info-bg);
+  border-style: solid; color: var(--a-ink-3);
+}
+.uploadzone__ico { color: var(--a-blue-deep); }
+.uploadzone b { font-size: .92rem; color: var(--a-text); }
+.uploadzone span:not(.uploadzone__ico) { font-size: .8rem; max-width: 44ch; line-height: 1.5; }
+
+/* Photos waiting to be published, so it is obvious which are not live yet. */
+.picker__new {
+  position: absolute; left: 4px; top: 4px; background: var(--a-warn);
+  color: #fff; font-size: .64rem; font-weight: 600;
+  padding: 2px 7px; border-radius: 20px;
+}
+
+/* The image bar now carries an extra button, so let it wrap on narrow screens. */
+.media__bar { flex-wrap: wrap; }
+.media__bar .input { flex: 1 1 180px; }
+
+.pubbar__photos {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--a-warn-bg); color: var(--a-warn);
+  border-radius: 20px; padding: 2px 9px; font-size: .74rem; font-weight: 600;
+}

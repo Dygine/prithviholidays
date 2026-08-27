@@ -1,0 +1,31 @@
+# Files that must never be served to a visitor.
+# Anything listed here still deploys with the Worker, it just is not
+# reachable over HTTP — which matters most for lib/, since that is where the
+# GitHub publishing code lives.
+
+node_modules/
+.wrangler/
+.git/
+package-lock.json
+npm-debug.log
+
+worker.mjs
+wrangler.jsonc
+wrangler.toml
+.assetsignore
+.gitignore
+.env
+.env.example
+
+lib/
+api/
+functions/
+tools/
+dev-server.mjs
+
+package.json
+vercel.json
+_headers
+README.md
+DEPLOY.md
+CLIENT-GUIDE.md

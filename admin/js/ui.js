@@ -674,17 +674,31 @@ window.AUI = (function () {
           (s.pages[k].team || []).forEach(function (m) { add(m.photo); });
         });
 
-        imageCache = names
-          .filter(function (n) { return n && !/^(https?:)?\/\//i.test(n) && n.indexOf('data:') !== 0; })
-          .filter(function (n, i, a) { return a.indexOf(n) === i; })
-          .sort();
-        return imageCache;
+        return Store.pendingPhotos().then(function (pending) {
+          (pending || []).forEach(function (n) { names.push('uploads/' + n); });
+
+          imageCache = names
+            .filter(function (n) {
+              return n && !/^(https?:)?\/\//i.test(n) && n.indexOf('data:') !== 0;
+            })
+            .filter(function (n, i, a) { return a.indexOf(n) === i; })
+            .sort();
+          return imageCache;
+        });
       });
   }
 
   /** Forget the cached list — used after a new path is typed in. */
   function forgetImages() { imageCache = null; }
 
+  /**
+   * Point an <img> at a stored path.
+   *
+   * Photos not yet published live only in IndexedDB, so this returns a
+   * placeholder synchronously and swaps in the real data URL when it
+   * arrives. Without that, every freshly uploaded photo would show as a
+   * broken image until the user pressed Publish.
+   */
   function imgSrc(v) {
     if (!v) { return ''; }
     if (/^(https?:)?\/\//i.test(v) || v.indexOf('data:') === 0) { return v; }
@@ -692,7 +706,16 @@ window.AUI = (function () {
     return '../uploads/' + v;
   }
 
-  /** A single-image field: preview, a text box for a path or URL, browse. */
+  /** Set an image element's source, resolving a pending upload if needed. */
+  function setImg(el, value) {
+    if (!el) { return; }
+    el.src = imgSrc(value);
+    Store.resolveImage(value).then(function (src) {
+      if (src) { el.src = src; }
+    }).catch(function () {});
+  }
+
+  /** A single-image field: preview, upload, a text box for a path, browse. */
   function imageField(host, obj, key, opts) {
     opts = opts || {};
 
@@ -700,7 +723,9 @@ window.AUI = (function () {
       host.innerHTML = '';
       var preview = el('div', { class: 'media__preview' });
       if (obj[key]) {
-        preview.appendChild(el('img', { src: imgSrc(obj[key]), alt: '', loading: 'lazy' }));
+        var im = el('img', { alt: '', loading: 'lazy' });
+        setImg(im, obj[key]);
+        preview.appendChild(im);
       } else {
         preview.appendChild(el('div', {
           class: 'none', text: opts.emptyText || 'No photograph chosen'
@@ -710,7 +735,7 @@ window.AUI = (function () {
       var input = el('input', {
         class: 'input', type: 'text', value: obj[key] || '',
         'aria-label': opts.label || 'Image path',
-        placeholder: 'images/hampi.jpg, filename.jpg or https://…'
+        placeholder: 'images/hampi.jpg or https://…'
       });
       input.addEventListener('input', function () {
         obj[key] = input.value.trim();
@@ -718,6 +743,31 @@ window.AUI = (function () {
         Store.saveData();
       });
       input.addEventListener('change', paint);
+
+      /* The real upload. A hidden file input keeps the native picker
+         without the browser's default control, which cannot be styled. */
+      var file = el('input', {
+        type: 'file', accept: 'image/*', class: 'visually-hidden',
+        'aria-hidden': 'true', tabindex: '-1'
+      });
+      file.addEventListener('change', function () {
+        var chosen = file.files && file.files[0];
+        if (!chosen) { return; }
+        uploadInto(chosen, function (path) {
+          obj[key] = path;
+          Store.saveData(true);
+          paint();
+          if (opts.onChange) { opts.onChange(path); }
+        });
+        file.value = '';
+      });
+
+      var up = el('button', {
+        class: 'btn btn--primary btn--sm', type: 'button',
+        html: icon('upload', 15) + 'Upload',
+        title: 'Upload a photograph from this device',
+        onclick: function () { file.click(); }
+      });
 
       var browse = el('button', {
         class: 'btn btn--ghost btn--sm', type: 'button',
@@ -746,12 +796,32 @@ window.AUI = (function () {
 
       host.appendChild(el('div', { class: 'media' }, [
         preview,
-        el('div', { class: 'media__bar' }, [input, browse, clear])
+        el('div', { class: 'media__bar' }, [input, up, browse, clear, file])
       ]));
     }
 
     paint();
     return { repaint: paint };
+  }
+
+  /**
+   * Shared upload handler: shrink, store, report. Used by the single-image
+   * field, the gallery field and the picker so the messaging is identical
+   * wherever a photo comes in.
+   */
+  function uploadInto(file, done) {
+    var t = toast('Preparing ' + file.name, 'Resizing and saving…', null, 30000);
+    Store.addPhoto(file).then(function (res) {
+      t.close();
+      forgetImages();
+      var kb = Math.max(1, Math.round(res.bytes / 1024));
+      toast('Photograph added', res.width + 'px wide, about ' + kb + ' KB. ' +
+        'It goes live when you publish.');
+      done(res.path);
+    }).catch(function (err) {
+      t.close();
+      toast('That photo could not be added', err.message, 'err', 7000);
+    });
   }
 
   /** Modal grid of every available photograph. Resolves with the choice. */
@@ -763,15 +833,22 @@ window.AUI = (function () {
 
       var m = modal({
         title: 'Choose a photograph',
-        subtitle: 'Everything the site already uses. Paste a web address instead if you host images elsewhere.',
+        subtitle: 'Upload a new one, or pick something the site already uses.',
         size: 'lg',
         onClose: function () { finish(null); },
         body:
-          '<div class="field"><label class="label" for="mUrl">Or paste a path or web address</label>' +
-          '<input class="input" id="mUrl" type="text" placeholder="uploads/new-photo.jpg or https://example.com/photo.jpg" ' +
-          'value="' + (/^(https?:|uploads\/)/i.test(chosen) ? esc(chosen) : '') + '">' +
-          '<div class="hint">Drop new files into the <code>uploads/</code> folder, then reference ' +
-          'them here. Images are never stored inside the JSON.</div></div>' +
+          '<div class="uploadzone" data-drop tabindex="0" role="button" ' +
+          'aria-label="Upload a photograph">' +
+            '<span class="uploadzone__ico">' + icon('upload', 22) + '</span>' +
+            '<b>Upload a photograph</b>' +
+            '<span>Drag one here, or click to choose. Large photos are resized ' +
+            'automatically.</span>' +
+            '<input type="file" accept="image/*" class="visually-hidden" data-file>' +
+          '</div>' +
+          '<div class="field mt-3"><label class="label" for="mUrl">Or paste a web address</label>' +
+          '<input class="input" id="mUrl" type="text" placeholder="https://example.com/photo.jpg" ' +
+          'value="' + (/^https?:/i.test(chosen) ? esc(chosen) : '') + '">' +
+          '<div class="hint">Photographs are stored as files, never inside the JSON.</div></div>' +
           '<div class="divider"></div><div class="picker" data-picker></div>',
         buttons: [
           { label: 'Cancel', class: 'btn--ghost', onClick: function (a) { finish(null); a.close(); } },
@@ -790,6 +867,42 @@ window.AUI = (function () {
       grid.innerHTML = '<div class="skel skel--tile"></div><div class="skel skel--tile"></div>' +
         '<div class="skel skel--tile"></div><div class="skel skel--tile"></div>';
 
+      /* Upload straight from the picker, including drag and drop. */
+      var drop = m.qs('[data-drop]');
+      var fileInput = m.qs('[data-file]');
+
+      function take(f) {
+        if (!f) { return; }
+        uploadInto(f, function (path) {
+          chosen = path;
+          finish(path);
+          m.close();
+        });
+      }
+
+      drop.addEventListener('click', function () { fileInput.click(); });
+      drop.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+      });
+      fileInput.addEventListener('change', function () {
+        take(fileInput.files && fileInput.files[0]);
+      });
+      ['dragenter', 'dragover'].forEach(function (ev) {
+        drop.addEventListener(ev, function (e) {
+          e.preventDefault();
+          drop.classList.add('is-over');
+        });
+      });
+      ['dragleave', 'drop'].forEach(function (ev) {
+        drop.addEventListener(ev, function (e) {
+          e.preventDefault();
+          drop.classList.remove('is-over');
+        });
+      });
+      drop.addEventListener('drop', function (e) {
+        take(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]);
+      });
+
       availableImages().then(function (names) {
         grid.innerHTML = '';
         if (!names.length) {
@@ -797,12 +910,15 @@ window.AUI = (function () {
           return;
         }
         names.forEach(function (n) {
+          var isNew = n.indexOf('uploads/') === 0;
           var b = el('button', {
             class: 'picker__item', type: 'button', title: n,
             'aria-pressed': n === chosen ? 'true' : 'false',
-            html: '<img src="' + esc(imgSrc(n)) + '" alt="" loading="lazy">' +
-              '<span class="cap">' + esc(n) + '</span>'
+            html: '<img alt="" loading="lazy">' +
+              '<span class="cap">' + esc(n) + '</span>' +
+              (isNew ? '<span class="picker__new">New</span>' : '')
           });
+          setImg(qs('img', b), n);
           b.addEventListener('click', function () {
             chosen = n;
             m.qs('#mUrl').value = '';
@@ -834,10 +950,11 @@ window.AUI = (function () {
       arr.forEach(function (src, i) {
         var wrap = el('div', {
           class: 'picker__item picker__item--fixed', draggable: 'true', 'data-i': i,
-          html: '<img src="' + esc(imgSrc(src)) + '" alt="" loading="lazy">' +
+          html: '<img alt="" loading="lazy">' +
             '<span class="cap">' + esc(src) + '</span>' +
             (i === 0 && opts.markFirst ? '<span class="picker__first">First</span>' : '')
         });
+        setImg(qs('img', wrap), src);
         wrap.appendChild(el('button', {
           class: 'picker__del', type: 'button', title: 'Remove',
           'aria-label': 'Remove photograph ' + (i + 1),
@@ -854,17 +971,46 @@ window.AUI = (function () {
         }));
       }
 
-      host.appendChild(el('button', {
-        class: 'btn btn--ghost btn--sm rep__add', type: 'button',
-        html: icon('plus', 15) + 'Add a photograph',
-        onclick: function () {
-          pickImage('').then(function (chosen) {
-            if (!chosen) { return; }
-            arr.push(chosen);
-            changed();
+      var gFile = el('input', {
+        type: 'file', accept: 'image/*', multiple: 'multiple',
+        class: 'visually-hidden', 'aria-hidden': 'true', tabindex: '-1'
+      });
+      gFile.addEventListener('change', function () {
+        var list = Array.prototype.slice.call(gFile.files || []);
+        gFile.value = '';
+        /* One at a time — resizing several large photos at once locks up
+           the tab, and the progress is clearer this way. */
+        (function next(i) {
+          if (i >= list.length) { return; }
+          uploadInto(list[i], function (path) {
+            arr.push(path);
+            Store.saveData(true);
+            if (opts.onChange) { opts.onChange(arr); }
+            paint();
+            next(i + 1);
           });
-        }
-      }));
+        }(0));
+      });
+
+      host.appendChild(el('div', { class: 'flex gap-2 wrap mt-2' }, [
+        el('button', {
+          class: 'btn btn--primary btn--sm', type: 'button',
+          html: icon('upload', 15) + 'Upload photographs',
+          onclick: function () { gFile.click(); }
+        }),
+        el('button', {
+          class: 'btn btn--ghost btn--sm', type: 'button',
+          html: icon('plus', 15) + 'Choose existing',
+          onclick: function () {
+            pickImage('').then(function (chosen) {
+              if (!chosen) { return; }
+              arr.push(chosen);
+              changed();
+            });
+          }
+        }),
+        gFile
+      ]));
 
       sortable(grid, '.picker__item', function (from, to) {
         arr.splice(to, 0, arr.splice(from, 1)[0]);
@@ -921,8 +1067,17 @@ window.AUI = (function () {
     });
 
     qs('[data-export]', pubEl).addEventListener('click', function () {
-      Store.exportZip();
-      toast('Download started', 'Unzip it over your site\u2019s data folder, then commit the files.');
+      var t = toast('Preparing the download', 'Packing data and photographs…', null, 20000);
+      Store.exportZip().then(function (res) {
+        t.close();
+        toast('Download started', res.photoCount
+          ? 'Includes ' + res.photoCount + ' photograph' + (res.photoCount === 1 ? '' : 's') +
+            '. Unzip it over the project folder, then commit.'
+          : 'Unzip it over the project folder, then commit the files.');
+      }).catch(function (e) {
+        t.close();
+        toast('The download failed', e.message, 'err');
+      });
     });
 
     qs('[data-discard]', pubEl).addEventListener('click', function () {
@@ -950,7 +1105,10 @@ window.AUI = (function () {
     Store.on('change', function () {
       setPubState(Store.isDirty() ? 'dirty' : 'clean',
         Store.isDirty() ? 'Unpublished changes' : 'All changes published');
+      paintPhotoBadge();
     });
+    Store.on('photos-changed', paintPhotoBadge);
+    paintPhotoBadge();
     Store.on('saved', function () {
       if (Store.isDirty()) { setPubState('dirty', 'Draft saved'); }
     });
@@ -989,6 +1147,22 @@ window.AUI = (function () {
     });
   }
 
+  /** A count of photographs waiting to go up, shown beside the state dot. */
+  function paintPhotoBadge() {
+    if (!pubEl) { return; }
+    Store.pendingPhotos().then(function (list) {
+      var n = (list || []).length;
+      var box = qs('[data-pubstate]', pubEl);
+      var badge = qs('.pubbar__photos', box);
+      if (!n) { if (badge) { badge.remove(); } return; }
+      if (!badge) {
+        badge = el('span', { class: 'pubbar__photos' });
+        box.appendChild(badge);
+      }
+      badge.innerHTML = icon('image', 13) + n + (n === 1 ? ' photo' : ' photos');
+    }).catch(function () {});
+  }
+
   function setPubState(state, text) {
     if (!pubEl) { return; }
     var box = qs('[data-pubstate]', pubEl);
@@ -1003,6 +1177,15 @@ window.AUI = (function () {
       toast('Nothing to publish', 'The live site already matches what you see here.', 'warn');
       return;
     }
+
+    /* Count photos waiting so the confirmation tells the whole truth about
+       what this commit will contain. */
+    Store.pendingPhotos().then(function (photos) {
+      doPublishWith(changed, (photos || []).length);
+    }).catch(function () { doPublishWith(changed, 0); });
+  }
+
+  function doPublishWith(changed, photoCount) {
 
     if (!mode.configured) {
       modal({
@@ -1021,7 +1204,7 @@ window.AUI = (function () {
         buttons: [
           { label: 'Close', class: 'btn--ghost' },
           {
-            label: 'Download JSON', class: 'btn--primary', icon: 'download',
+            label: 'Download everything', class: 'btn--primary', icon: 'download',
             onClick: function (a) { Store.exportZip(); a.close(); }
           }
         ]
@@ -1029,11 +1212,14 @@ window.AUI = (function () {
       return;
     }
 
-    var summary = changed.map(function (f) { return '<li>' + esc(f) + '.json</li>'; }).join('');
+    var summary = changed.map(function (f) { return '<li>' + esc(f) + '.json</li>'; }).join('') +
+      (photoCount ? '<li><b>' + photoCount + ' new photograph' +
+        (photoCount === 1 ? '' : 's') + '</b></li>' : '');
     var m = modal({
       title: 'Publish to the live site?',
-      subtitle: 'This commits ' + changed.length + ' file' + (changed.length > 1 ? 's' : '') +
-        ' to ' + (mode.repo || 'GitHub') + '.',
+      subtitle: 'This commits ' + (changed.length + photoCount) + ' file' +
+        ((changed.length + photoCount) > 1 ? 's' : '') + ' to ' + (mode.repo || 'GitHub') +
+        ' in one go.',
       size: 'sm',
       body: '<ul class="soft small" style="margin:0 0 14px 18px;line-height:1.7">' + summary + '</ul>' +
         '<div class="field"><label class="label" for="pubMsg">Note for the commit history ' +
@@ -1084,7 +1270,8 @@ window.AUI = (function () {
     repeater: repeater, masterSelect: masterSelect, sortable: sortable,
 
     imageField: imageField, galleryField: galleryField, pickImage: pickImage,
-    imgSrc: imgSrc, availableImages: availableImages, forgetImages: forgetImages,
+    imgSrc: imgSrc, setImg: setImg, uploadInto: uploadInto,
+    availableImages: availableImages, forgetImages: forgetImages,
 
     emptyState: emptyState, badge: badge,
     setPubState: setPubState, publish: doPublish

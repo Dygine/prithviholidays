@@ -113,9 +113,16 @@ prithvi-holidays/
 ├── api/site.mjs                Vercel publishing endpoint
 ├── functions/api/site.js       Cloudflare Pages publishing endpoint
 ├── lib/github.mjs              the publishing core (server-side only)
+├── worker.mjs                  Cloudflare Worker entry point
+├── wrangler.jsonc              Cloudflare config
+├── .assetsignore               files that must never be served
 ├── dev-server.mjs              local server that can answer POST
+├── 404.html  robots.txt  sitemap.xml
+├── DEPLOY.md                   step-by-step deployment
+├── CLIENT-GUIDE.md             plain-language guide for the client
 └── tools/
     ├── scan-media.py           rebuild data/media.json
+    ├── build-seo.py            rebuild sitemap.xml and robots.txt
     └── set-passcode.py         change the admin passcode
 ```
 
@@ -165,17 +172,26 @@ no controls.
 
 ### Photographs
 
-There is no upload button, and that is deliberate — a browser cannot write files
-to a deployed static host, so an upload button would be a lie.
+Every image field has a real **Upload** button, and the media picker takes drag
+and drop. What happens under the hood:
 
-Instead:
+1. The file is read in the browser and drawn onto a canvas
+2. It is scaled down to at most **1400px** wide and re-encoded as JPEG at 0.84
+   quality — a 6 MB phone photo lands at roughly 200 KB
+3. It is stored in **IndexedDB** under a generated name like
+   `20260827-64e57a04c4.jpg`
+4. On **Publish** it rides to GitHub as base64, in the same commit as the JSON
 
-1. Copy new photographs into `uploads/`
-2. Run `python tools/scan-media.py` so the picker knows about them
-3. Pick them anywhere in the admin, or type the path directly
+IndexedDB rather than localStorage because localStorage caps out near 5 MB and
+holds strings only — three phone photos would fill it and break every save.
 
-You can also paste a full URL to an image hosted anywhere. JSON only ever stores
-the **path** — never base64, so the data files stay small and fast.
+Photos waiting to go up are marked **New** in the picker and counted in the
+publish bar. A photo that is uploaded and then unassigned is never committed,
+and `Store.prunePhotos()` clears it out.
+
+You can still paste an external URL, or re-use anything already on the site via
+**Browse**. The JSON only ever stores a **path** — never base64 — so the data
+files stay small.
 
 ---
 
@@ -183,11 +199,9 @@ the **path** — never base64, so the data files stay small and fast.
 
 ## Signing in
 
-The admin is behind a passcode. The one shipped with this build is:
-
-```
-Prithvi-lrlt73-9845
-```
+The admin is behind a passcode. The one shipped with this build is in
+**`PASSCODE.txt`**, which `.gitignore` deliberately excludes — a passcode in a
+README is a passcode in your git history forever.
 
 **Change it before you deploy:**
 
@@ -275,6 +289,12 @@ commit by hand. The result is identical, just manual.
 
 ## Deploying to production
 
+**See [DEPLOY.md](DEPLOY.md) for the full walkthrough.** Short version below.
+
+> **Use Cloudflare, not Vercel, for a client site.** Vercel's free Hobby plan is
+> for personal, non-commercial projects — a business website on it breaks their
+> terms even though it works. Cloudflare Pages allows commercial use free.
+
 The site is static, so any host works for the *website*. Publishing from the
 admin needs a host that runs a serverless function. Both are included.
 
@@ -343,8 +363,9 @@ your own serverless function. The admin shows a warning until you do.
 
 Stated plainly, because these are the real limits:
 
-1. **No file uploads from the browser.** Photographs go into `uploads/` by FTP,
-   git or your host's dashboard, then `tools/scan-media.py` lists them.
+1. **Uploads go live on publish, not instantly.** A photo is held in the
+   browser until you press Publish, because a browser cannot write to a server.
+   In practice this is invisible — it travels with the same commit as the text.
 2. **No enquiry storage without a backend.** See above.
 3. **Browser-checked passcode without a backend.** The gate uses a salted
    PBKDF2-SHA256 hash rather than a plaintext password, but the comparison
