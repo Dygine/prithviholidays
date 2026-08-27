@@ -574,24 +574,5 @@
     "published": true,
     "sort": 31,
     "updatedAt": "2026-08-27T00:00:00.000Z"
-  },
-  {
-    "id": "dst-kuduremuka",
-    "name": "Kuduremuka",
-    "slug": "kuduremuka",
-    "region": "Chikmangaluru",
-    "regionId": "reg-karnataka",
-    "state": "Karnataka",
-    "shortDescription": "",
-    "description": "",
-    "image": "uploads/20260827-a09899f0b5.jpg",
-    "gallery": [],
-    "bestTime": "",
-    "duration": "",
-    "featured": true,
-    "published": true,
-    "sort": 32,
-    "createdAt": "2026-08-27T11:49:32.605Z",
-    "updatedAt": "2026-08-27T11:49:32.605Z"
   }
 ]
