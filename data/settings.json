@@ -1,6 +1,6 @@
 {
-  "businessName": "Prithvi Holiday",
-  "tagline": "India travel specialists",
+  "businessName": "Prithvi Holidays",
+  "tagline": "India travel specialists 2323",
   "shortAbout": "South India travel specialists crafting personalised journeys across Karnataka, Kerala &amp; Tamil Nadu &mdash; from Hampi's ruins to Kerala's backwaters and the temple cities of Tamil Nadu.",
   "phone": "+91 82201 36068",
   "whatsapp": "918220136068",
@@ -362,5 +362,5 @@
     "successBody": "We'll reply within one business day.",
     "note": "Leave endpoint empty to store enquiries in the visitor's browser. Set it to a Formspree / Google Apps Script / serverless URL to receive them live."
   },
-  "updatedAt": "2026-08-27T09:46:26.614Z"
+  "updatedAt": "2026-08-27T09:56:22.563Z"
 }
