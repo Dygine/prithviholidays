@@ -34,7 +34,7 @@
   },
   "home": {
     "introKicker": "Welcome to Prithvi Holidays",
-    "introTitle": "Your South India,,,,,,,,",
+    "introTitle": "Your South India,",
     "introAccent": "Designed Around You",
     "introBody": "For over a decade we've crafted personalised journeys across India — from the Himalayas to Kerala, Rajasthan to the Northeast. Whether it's a week of temples and palaces, a mountain honeymoon, or an all-India grand tour, every trip is hand-built by travel designers who actually know these roads, stays and seasons.",
     "regionsKicker": "Where We Travel",
@@ -362,5 +362,5 @@
     "successBody": "We'll reply within one business day.",
     "note": "Leave endpoint empty to store enquiries in the visitor's browser. Set it to a Formspree / Google Apps Script / serverless URL to receive them live."
   },
-  "updatedAt": "2026-08-27T10:00:26.289Z"
+  "updatedAt": "2026-08-27T10:01:39.209Z"
 }
