@@ -1,0 +1,14 @@
+{
+  "name": "prithvi-holidays",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prithvi Holidays — a static, JSON-driven travel website with a full admin panel.",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "dev:api": "node dev-server.mjs",
+    "media": "python3 tools/scan-media.py"
+  },
+  "engines": { "node": ">=18" }
+}

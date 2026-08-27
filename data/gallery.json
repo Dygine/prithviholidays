@@ -1,0 +1,90 @@
+[
+  {
+    "id": "gal-hampi",
+    "title": "Hampi",
+    "caption": "",
+    "image": "images/hampi.jpg",
+    "category": "",
+    "featured": true,
+    "published": true,
+    "sort": 0,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-om-beach",
+    "title": "Om Beach",
+    "caption": "",
+    "image": "images/ombeach.jpg",
+    "category": "",
+    "featured": true,
+    "published": true,
+    "sort": 1,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-jog-falls",
+    "title": "Jog Falls",
+    "caption": "",
+    "image": "images/jogfalls.jpg",
+    "category": "Karnataka",
+    "featured": true,
+    "published": true,
+    "sort": 2,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-mysore-palace",
+    "title": "Mysore Palace",
+    "caption": "",
+    "image": "images/mysuru.jpg",
+    "category": "Karnataka",
+    "featured": true,
+    "published": true,
+    "sort": 3,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-coorg",
+    "title": "Coorg",
+    "caption": "",
+    "image": "images/kodagu.jpg",
+    "category": "",
+    "featured": true,
+    "published": true,
+    "sort": 4,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-murudeshwara",
+    "title": "Murudeshwara",
+    "caption": "",
+    "image": "images/murudeshwara.jpg",
+    "category": "Karnataka",
+    "featured": true,
+    "published": true,
+    "sort": 5,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-western-ghats",
+    "title": "Western Ghats",
+    "caption": "",
+    "image": "images/westrenghats.jpg",
+    "category": "",
+    "featured": true,
+    "published": true,
+    "sort": 6,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "gal-nandi-hills",
+    "title": "Nandi Hills",
+    "caption": "",
+    "image": "images/nandihills.jpg",
+    "category": "Karnataka",
+    "featured": true,
+    "published": true,
+    "sort": 7,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  }
+]

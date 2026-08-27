@@ -1,0 +1,1285 @@
+{
+  "packages": [
+    {
+      "id": "kerala-coorg-honeymoon",
+      "name": "Kerala & Coorg Honeymoon",
+      "slug": "kerala-coorg-honeymoon",
+      "destinationId": "dst-coorg-hills",
+      "categoryId": "cat-romance",
+      "shortDescription": "Munnar tea hills, a backwater houseboat and Coorg's coffee estates.",
+      "description": "Munnar tea hills, a backwater houseboat and Coorg's coffee estates.\n\nThis 7 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/kodagu.jpg",
+      "gallery": [],
+      "duration": "7 Days",
+      "guests": "2 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": true,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Private houseboat night on the Alleppey backwaters",
+        "Munnar tea estate walk with a plantation guide",
+        "Coffee estate stay in Kodagu",
+        "Candlelit dinner arranged on request"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Coorg Hills.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/kodagu.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Coorg Hills",
+          "description": "A full guided day around Coorg Hills at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Coorg Hills",
+          "description": "A full guided day around Coorg Hills at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Coorg Hills",
+          "description": "A full guided day around Coorg Hills at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Coorg Hills",
+          "description": "A full guided day around Coorg Hills at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Exploring Coorg Hills",
+          "description": "A full guided day around Coorg Hills at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Coorg Hills",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 0,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "karnataka-heritage-family-trail",
+      "name": "Karnataka Heritage Family Trail",
+      "slug": "karnataka-heritage-family-trail",
+      "destinationId": "dst-mysore-palace",
+      "categoryId": "cat-family",
+      "shortDescription": "Mysuru, Srirangapatna & Ranganathittu — stress-free for all ages.",
+      "description": "Mysuru, Srirangapatna & Ranganathittu — stress-free for all ages.\n\nThis 5 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/mysuru.jpg",
+      "gallery": [],
+      "duration": "5 Days",
+      "guests": "2-6 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Mysore Palace illumination viewing",
+        "Ranganathittu bird sanctuary boat ride",
+        "Srirangapatna heritage walk",
+        "Kid-friendly pacing with short drives"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Mysore Palace.",
+          "location": "Mysore Palace",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/mysuru.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Mysore Palace",
+          "description": "A full guided day around Mysore Palace at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mysore Palace",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Mysore Palace",
+          "description": "A full guided day around Mysore Palace at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mysore Palace",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Mysore Palace",
+          "description": "A full guided day around Mysore Palace at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mysore Palace",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Mysore Palace",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 1,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "hampi-badami-explorer",
+      "name": "Hampi & Badami Explorer",
+      "slug": "hampi-badami-explorer",
+      "destinationId": "dst-hampi-ruins",
+      "categoryId": "cat-culture",
+      "shortDescription": "Boulder ruins, cave temples and Chalukyan wonders together.",
+      "description": "Boulder ruins, cave temples and Chalukyan wonders together.\n\nThis 6 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/hampi.jpg",
+      "gallery": [],
+      "duration": "6 Days",
+      "guests": "2-12 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Sunrise over the Hampi boulder field",
+        "Vittala temple and the stone chariot",
+        "Badami cave temples cut into red sandstone",
+        "Pattadakal and Aihole Chalukyan sites"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Hampi Ruins.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/hampi.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 2,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "nilgiri-hill-station-tour",
+      "name": "Nilgiri Hill-Station Tour",
+      "slug": "nilgiri-hill-station-tour",
+      "destinationId": "dst-ooty-hill-station",
+      "categoryId": "cat-hills",
+      "shortDescription": "Ooty, Coonoor and Kodaikanal — toy trains, lakes and misty walks.",
+      "description": "Ooty, Coonoor and Kodaikanal — toy trains, lakes and misty walks.\n\nThis 5 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/ooty.jpg",
+      "gallery": [],
+      "duration": "5 Days",
+      "guests": "2-6 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Nilgiri Mountain Railway toy-train ride",
+        "Tea factory visit in Coonoor",
+        "Boating on Ooty and Kodaikanal lakes",
+        "Dolphin's Nose and Pillar Rocks viewpoints"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Ooty Hill Station.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/ooty.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 3,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "tamil-nadu-temple-circuit",
+      "name": "Tamil Nadu Temple Circuit",
+      "slug": "tamil-nadu-temple-circuit",
+      "destinationId": "dst-meenakshi-temple-madurai",
+      "categoryId": "cat-spiritual",
+      "shortDescription": "Madurai, Rameswaram, Thanjavur and Kanyakumari's three seas.",
+      "description": "Madurai, Rameswaram, Thanjavur and Kanyakumari's three seas.\n\nThis 8 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/madurai.jpg",
+      "gallery": [],
+      "duration": "8 Days",
+      "guests": "2-16 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": true,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Meenakshi Amman temple evening ceremony",
+        "Rameswaram's thousand-pillar corridor",
+        "Brihadeeswarar temple at Thanjavur",
+        "Sunrise where three seas meet at Kanyakumari"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Meenakshi Temple, Madurai.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/madurai.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 7,
+          "title": "Exploring Meenakshi Temple, Madurai",
+          "description": "A full guided day around Meenakshi Temple, Madurai at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 8,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Meenakshi Temple, Madurai",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 4,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "classic-kerala-loop",
+      "name": "Classic Kerala Loop",
+      "slug": "classic-kerala-loop",
+      "destinationId": "dst-alleppey-backwaters",
+      "categoryId": "cat-backwaters",
+      "shortDescription": "Kochi, Munnar, Thekkady and an Alleppey houseboat night.",
+      "description": "Kochi, Munnar, Thekkady and an Alleppey houseboat night.\n\nThis 6 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/alleppey.jpg",
+      "gallery": [],
+      "duration": "6 Days",
+      "guests": "2-8 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Fort Kochi heritage and Chinese fishing nets",
+        "Munnar tea hills and Eravikulam park",
+        "Periyar wildlife cruise at Thekkady",
+        "Overnight Alleppey houseboat"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Alleppey Backwaters.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/alleppey.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Alleppey Backwaters",
+          "description": "A full guided day around Alleppey Backwaters at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Alleppey Backwaters",
+          "description": "A full guided day around Alleppey Backwaters at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Alleppey Backwaters",
+          "description": "A full guided day around Alleppey Backwaters at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Alleppey Backwaters",
+          "description": "A full guided day around Alleppey Backwaters at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Alleppey Backwaters",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 5,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "luxury-coastal-karnataka",
+      "name": "Luxury Coastal Karnataka",
+      "slug": "luxury-coastal-karnataka",
+      "destinationId": "dst-om-beach-gokarna",
+      "categoryId": "cat-premium",
+      "shortDescription": "Gokarna, Om Beach & Murudeshwara with white-glove service.",
+      "description": "Gokarna, Om Beach & Murudeshwara with white-glove service.\n\nThis 5 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/ombeach.jpg",
+      "gallery": [],
+      "duration": "5 Days",
+      "guests": "2-4 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Beachfront resort stays throughout",
+        "Om Beach and Kudle Beach at sunset",
+        "Murudeshwara's towering Shiva statue",
+        "Private car with an English-speaking chauffeur"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Om Beach, Gokarna.",
+          "location": "Om Beach, Gokarna",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/ombeach.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Om Beach, Gokarna",
+          "description": "A full guided day around Om Beach, Gokarna at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Om Beach, Gokarna",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Om Beach, Gokarna",
+          "description": "A full guided day around Om Beach, Gokarna at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Om Beach, Gokarna",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Om Beach, Gokarna",
+          "description": "A full guided day around Om Beach, Gokarna at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Om Beach, Gokarna",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Om Beach, Gokarna",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 6,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "south-india-grand-journey",
+      "name": "South India Grand Journey",
+      "slug": "south-india-grand-journey",
+      "destinationId": "dst-mahabalipuram",
+      "categoryId": "cat-grand-tour",
+      "shortDescription": "Three states in one epic route — palaces, backwaters and temples.",
+      "description": "Three states in one epic route — palaces, backwaters and temples.\n\nThis 12 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/mahabalipuram.jpg",
+      "gallery": [],
+      "duration": "12 Days",
+      "guests": "2-12 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": false,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "All three states in one continuous route",
+        "Mysuru palaces and Hampi ruins",
+        "Kerala backwaters and Munnar tea country",
+        "Tamil Nadu temple towns and Mahabalipuram"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Mahabalipuram.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/mahabalipuram.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 7,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 8,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 9,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 10,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 11,
+          "title": "Exploring Mahabalipuram",
+          "description": "A full guided day around Mahabalipuram at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 12,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Mahabalipuram",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 7,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "karnataka-heritage-trail",
+      "name": "Karnataka Heritage Trail",
+      "slug": "karnataka-heritage-trail",
+      "destinationId": "dst-hampi-ruins",
+      "categoryId": "cat-culture",
+      "shortDescription": "Hampi, Badami, Pattadakal and the palaces of Mysuru.",
+      "description": "Hampi, Badami, Pattadakal and the palaces of Mysuru.\n\nThis 6 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/hampi.jpg",
+      "gallery": [],
+      "duration": "6 Days",
+      "guests": "2-12 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": true,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Hampi's boulder landscape and Vittala temple",
+        "Badami cave temples and Pattadakal",
+        "Mysore Palace and the Devaraja market",
+        "Heritage stays chosen for character, not just comfort"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Hampi Ruins.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/hampi.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Exploring Hampi Ruins",
+          "description": "A full guided day around Hampi Ruins at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 6,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Hampi Ruins",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 8,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    },
+    {
+      "id": "nilgiri-hills-family-tour",
+      "name": "Nilgiri Hills Family Tour",
+      "slug": "nilgiri-hills-family-tour",
+      "destinationId": "dst-ooty-hill-station",
+      "categoryId": "cat-family",
+      "shortDescription": "Ooty, Coonoor and Kodaikanal with toy-train rides and lakes.",
+      "description": "Ooty, Coonoor and Kodaikanal with toy-train rides and lakes.\n\nThis 5 days itinerary is a starting point, not a fixed departure. Every stay, drive and rest day can be reshaped around your dates, your pace and your budget — tell us what matters most and we will send a tailored plan with one clear all-in quote.",
+      "image": "images/ooty.jpg",
+      "gallery": [],
+      "duration": "5 Days",
+      "guests": "2-6 Guests",
+      "price": 0,
+      "originalPrice": 0,
+      "currency": "INR",
+      "showPrice": false,
+      "priceNote": "Enquire for pricing",
+      "featured": true,
+      "published": true,
+      "bookingStatus": "available",
+      "seatsLeft": null,
+      "highlights": [
+        "Nilgiri Mountain Railway toy-train ride",
+        "Ooty and Kodaikanal lake boating",
+        "Coonoor tea gardens and Sim's Park",
+        "Short driving days built around younger travellers"
+      ],
+      "inclusions": [
+        "Accommodation in vetted hotels or resorts",
+        "Daily breakfast",
+        "Private air-conditioned vehicle with driver",
+        "All transfers and sightseeing as per itinerary",
+        "Local English-speaking guide where noted",
+        "Toll, parking, driver allowance and fuel",
+        "24/7 on-trip support"
+      ],
+      "exclusions": [
+        "Airfare and train tickets",
+        "Lunch and dinner unless specified",
+        "Monument and activity entry fees",
+        "Personal expenses, tips and laundry",
+        "Travel insurance",
+        "Anything not listed under inclusions"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival and welcome",
+          "description": "Arrive and transfer to your hotel. Your travel designer meets you for a short briefing, then the rest of the day is yours to settle in near Ooty Hill Station.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Airport or station pickup",
+            "Hotel check-in",
+            "Welcome briefing"
+          ],
+          "image": "images/ooty.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 3,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 4,
+          "title": "Exploring Ooty Hill Station",
+          "description": "A full guided day around Ooty Hill Station at a pace that suits you, with your driver on call and time built in for photographs and a proper lunch.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Guided sightseeing",
+            "Local lunch stop",
+            "Evening at leisure"
+          ],
+          "image": ""
+        },
+        {
+          "day": 5,
+          "title": "Departure",
+          "description": "Breakfast, an unhurried morning and a private transfer to your airport or station in time for your onward journey.",
+          "location": "Ooty Hill Station",
+          "activities": [
+            "Breakfast",
+            "Check-out",
+            "Departure transfer"
+          ],
+          "image": ""
+        }
+      ],
+      "sort": 9,
+      "createdAt": "2026-08-27T00:00:00.000Z",
+      "updatedAt": "2026-08-27T00:00:00.000Z"
+    }
+  ],
+  "updatedAt": "2026-08-27T00:00:00.000Z"
+}

@@ -1,0 +1,8 @@
+{
+  "note": "Salted PBKDF2-SHA256 hash of the admin passcode. Regenerate with tools/set-passcode.py. The passcode itself is not stored here and cannot be recovered from this file.",
+  "algorithm": "PBKDF2-SHA256",
+  "iterations": 310000,
+  "salt": "mw45p4L7eFmul6+p8M9RGQ==",
+  "hash": "3/YiatW/1BLsoF9CGwT8Cwj11p6AaasfAoG7+YliKyo=",
+  "updatedAt": "2026-08-27T08:37:40.822422Z"
+}

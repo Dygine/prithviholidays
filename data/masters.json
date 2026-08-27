@@ -1,0 +1,157 @@
+{
+  "regions": [
+    {
+      "id": "reg-karnataka",
+      "name": "Karnataka",
+      "slug": "karnataka",
+      "sectionTitle": "Iconic <em>Karnataka</em>",
+      "blurb": "Ancient empires, Western-Ghats coffee country, a golden coast and roaring waterfalls.",
+      "image": "images/kodagu.jpg",
+      "active": true,
+      "sort": 0,
+      "homeImage": "images/kodagu.jpg",
+      "homeCaption": "12+ destinations"
+    },
+    {
+      "id": "reg-kerala",
+      "name": "Kerala",
+      "slug": "kerala",
+      "sectionTitle": "God's Own Country &mdash; <em>Kerala</em>",
+      "blurb": "Backwaters and houseboats, tea-clad hills, spice forests and palm-fringed beaches.",
+      "image": "images/munnar.jpg",
+      "active": true,
+      "sort": 1,
+      "homeImage": "images/munnar.jpg",
+      "homeCaption": "10+ destinations"
+    },
+    {
+      "id": "reg-tamil-nadu",
+      "name": "Tamil Nadu",
+      "slug": "tamil-nadu",
+      "sectionTitle": "Temples &amp; Hills of <em>Tamil Nadu</em>",
+      "blurb": "Living temple cities, breezy Nilgiri hill stations, French-flavoured coasts and Chola heritage.",
+      "image": "images/madurai.jpg",
+      "active": true,
+      "sort": 2,
+      "homeImage": "images/madurai.jpg",
+      "homeCaption": "10+ destinations"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-romance",
+      "name": "Romance",
+      "slug": "romance",
+      "active": true,
+      "sort": 0
+    },
+    {
+      "id": "cat-family",
+      "name": "Family",
+      "slug": "family",
+      "active": true,
+      "sort": 1
+    },
+    {
+      "id": "cat-culture",
+      "name": "Culture",
+      "slug": "culture",
+      "active": true,
+      "sort": 2
+    },
+    {
+      "id": "cat-hills",
+      "name": "Hills",
+      "slug": "hills",
+      "active": true,
+      "sort": 3
+    },
+    {
+      "id": "cat-spiritual",
+      "name": "Spiritual",
+      "slug": "spiritual",
+      "active": true,
+      "sort": 4
+    },
+    {
+      "id": "cat-backwaters",
+      "name": "Backwaters",
+      "slug": "backwaters",
+      "active": true,
+      "sort": 5
+    },
+    {
+      "id": "cat-premium",
+      "name": "Premium",
+      "slug": "premium",
+      "active": true,
+      "sort": 6
+    },
+    {
+      "id": "cat-grand-tour",
+      "name": "Grand Tour",
+      "slug": "grand-tour",
+      "active": true,
+      "sort": 7
+    }
+  ],
+  "travelStyles": [
+    {
+      "id": "sty-family-tour",
+      "name": "Family Tour",
+      "active": true,
+      "sort": 0
+    },
+    {
+      "id": "sty-honeymoon",
+      "name": "Honeymoon",
+      "active": true,
+      "sort": 1
+    },
+    {
+      "id": "sty-adventure",
+      "name": "Adventure",
+      "active": true,
+      "sort": 2
+    },
+    {
+      "id": "sty-luxury",
+      "name": "Luxury",
+      "active": true,
+      "sort": 3
+    },
+    {
+      "id": "sty-group",
+      "name": "Group",
+      "active": true,
+      "sort": 4
+    }
+  ],
+  "bookingStatuses": [
+    {
+      "id": "available",
+      "name": "Available",
+      "active": true,
+      "sort": 0
+    },
+    {
+      "id": "limited",
+      "name": "Limited seats",
+      "active": true,
+      "sort": 1
+    },
+    {
+      "id": "sold-out",
+      "name": "Sold out",
+      "active": true,
+      "sort": 2
+    },
+    {
+      "id": "coming-soon",
+      "name": "Coming soon",
+      "active": true,
+      "sort": 3
+    }
+  ],
+  "updatedAt": "2026-08-27T00:00:00.000Z"
+}

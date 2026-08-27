@@ -1,0 +1,74 @@
+[
+  {
+    "id": "adv-waterfall-expeditions",
+    "name": "Waterfall Expeditions",
+    "slug": "waterfall-expeditions",
+    "icon": "bi bi-tsunami",
+    "description": "Chase the roar of Jog Falls and Shivanasamudra in full monsoon flow.",
+    "image": "images/jogfalls.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 0,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "adv-western-ghats-trekking",
+    "name": "Western Ghats Trekking",
+    "slug": "western-ghats-trekking",
+    "icon": "bi bi-tree",
+    "description": "Summit Kemmangundi and the green ridges of the Western Ghats.",
+    "image": "images/westrenghats.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 1,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "adv-dandeli-river-rafting",
+    "name": "Dandeli River Rafting",
+    "slug": "dandeli-river-rafting",
+    "icon": "bi bi-water",
+    "description": "Ride the white water of the Kali river through dense jungle.",
+    "image": "images/dandeli.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 2,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "adv-coastal-beach-escapes",
+    "name": "Coastal & Beach Escapes",
+    "slug": "coastal-beach-escapes",
+    "icon": "bi bi-umbrella",
+    "description": "Unwind on Om Beach and the golden sands of Gokarna.",
+    "image": "images/ombeach.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 3,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "adv-coorg-coffee-trails",
+    "name": "Coorg Coffee Trails",
+    "slug": "coorg-coffee-trails",
+    "icon": "bi bi-cup-hot",
+    "description": "Walk fragrant plantations and misty hills of Kodagu.",
+    "image": "images/kodagu.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 4,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "adv-wildlife-safari",
+    "name": "Wildlife Safari",
+    "slug": "wildlife-safari",
+    "icon": "bi bi-binoculars",
+    "description": "Spot tigers and elephants in Bandipur & Nagarhole reserves.",
+    "image": "images/bandipur.jpg",
+    "featured": true,
+    "published": true,
+    "sort": 5,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  }
+]

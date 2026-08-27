@@ -1,0 +1,366 @@
+{
+  "businessName": "Prithvi Holidays",
+  "tagline": "India travel specialists",
+  "shortAbout": "South India travel specialists crafting personalised journeys across Karnataka, Kerala &amp; Tamil Nadu &mdash; from Hampi's ruins to Kerala's backwaters and the temple cities of Tamil Nadu.",
+  "phone": "+91 82201 36068",
+  "whatsapp": "918220136068",
+  "email": "prithviholidays03@gmail.com",
+  "officeHours": "Mon &ndash; Sat, 9:00 &ndash; 18:00 (IST)",
+  "address": "Rk ring road,Hosur-635109",
+  "instagram": "#",
+  "facebook": "#",
+  "twitter": "#",
+  "youtube": "#",
+  "googleMaps": "https://www.openstreetmap.org/export/embed.html?bbox=77.55%2C12.93%2C77.66%2C13.02&layer=mapnik&marker=12.9758%2C77.6050",
+  "logo": "images/logo.png",
+  "favicon": "images/logo.png",
+  "hero": {
+    "tag": "India Journeys &middot; North &middot; South &middot; East &middot; West",
+    "title": "Answer The",
+    "accent": "Call of India .....",
+    "subtitle": "One country, endless journeys. Discover ancient temples, misty mountains, golden coasts and royal deserts — designed around you by local experts.",
+    "primaryButton": "Explore Destinations",
+    "primaryButtonLink": "destinations.html",
+    "secondaryButton": "Plan Your Trip",
+    "secondaryButtonLink": "contact.html",
+    "images": [
+      "images/jogfalls.jpg",
+      "images/ombeach.jpg",
+      "images/hampi.jpg",
+      "images/mysuru.jpg",
+      "images/kodagu.jpg"
+    ],
+    "interval": 5000
+  },
+  "home": {
+    "introKicker": "Welcome to Prithvi Holidays",
+    "introTitle": "Your South India,",
+    "introAccent": "Designed Around You",
+    "introBody": "For over a decade we've crafted personalised journeys across India — from the Himalayas to Kerala, Rajasthan to the Northeast. Whether it's a week of temples and palaces, a mountain honeymoon, or an all-India grand tour, every trip is hand-built by travel designers who actually know these roads, stays and seasons.",
+    "regionsKicker": "Where We Travel",
+    "regionsTitle": "All India,",
+    "regionsAccent": "One Journey",
+    "destinationsKicker": "Featured Escapes",
+    "destinationsTitle": "Popular",
+    "destinationsAccent": "Destinations",
+    "stepsKicker": "Simple &amp; Stress-Free",
+    "stepsTitle": "How It",
+    "stepsAccent": "Works",
+    "stepsBody": "From first hello to homecoming, four easy steps — and no upfront pricing pressure.",
+    "packagesKicker": "Curated Itineraries",
+    "packagesTitle": "Sample",
+    "packagesAccent": "Journeys",
+    "whyKicker": "Why Travellers Choose Us",
+    "whyTitle": "Travel with people who",
+    "whyAccent": "know South India",
+    "whyBody": "We pair deep local knowledge across three states with concierge-level care, so every mile feels effortless and every moment feels yours.",
+    "whyImage": "images/kodagu.jpg",
+    "whyBadgeNumber": "3+",
+    "whyBadgeLabel": "Years exploring<br>Karnataka, Kerala &amp; Tamil Nadu",
+    "testimonialsKicker": "Traveller Stories",
+    "testimonialsTitle": "Loved by",
+    "testimonialsAccent": "Adventurers",
+    "testimonialsBody": "Real words from travellers who let us carry their dreams across South India.",
+    "galleryKicker": "Visual Diary",
+    "galleryTitle": "Moments from the",
+    "galleryAccent": "Journey",
+    "galleryBody": "A glimpse into the places and light our travellers came home changed by.",
+    "steps": [
+      {
+        "icon": "bi bi-chat-dots",
+        "title": "1. Tell Us Your Dream",
+        "text": "Share where you'd like to go, your dates and travel style on our contact page."
+      },
+      {
+        "icon": "bi bi-pencil-square",
+        "title": "2. We Design It",
+        "text": "A travel designer crafts a custom itinerary with a clear, all-in quote."
+      },
+      {
+        "icon": "bi bi-check2-circle",
+        "title": "3. Refine & Confirm",
+        "text": "Tweak stays, pace and inclusions until it's perfect, then confirm."
+      },
+      {
+        "icon": "bi bi-airplane",
+        "title": "4. Travel Worry-Free",
+        "text": "Enjoy the trip with vetted stays, local guides and 24/7 on-trip support."
+      }
+    ],
+    "why": [
+      {
+        "icon": "bi bi-compass",
+        "title": "Local Experts",
+        "text": "Guides born across South India who know every fort, falls and backroad."
+      },
+      {
+        "icon": "bi bi-shield-check",
+        "title": "Safe Travel",
+        "text": "Vetted stays and 24/7 on-trip support for total peace of mind."
+      },
+      {
+        "icon": "bi bi-tag",
+        "title": "Best Value",
+        "text": "Direct local tie-ups mean great value with no middle-man markup."
+      },
+      {
+        "icon": "bi bi-headset",
+        "title": "24/7 Support",
+        "text": "A real human on call throughout your journey, day or night."
+      }
+    ]
+  },
+  "pages": {
+    "destinations": {
+      "title": "South India Destinations",
+      "image": "images/ombeach.jpg",
+      "kicker": "Three States, One Journey",
+      "headingTitle": "The Best of",
+      "headingAccent": "South India",
+      "body": "From the boulder-strewn ruins of Hampi to Kerala's misty tea hills and the soaring temple gopurams of Tamil Nadu — we design seamless journeys across all three states, or deep-dives into any one."
+    },
+    "packages": {
+      "title": "Travel Packages",
+      "image": "images/westrenghats.jpg",
+      "kicker": "Curated Itineraries",
+      "headingTitle": "Journeys for",
+      "headingAccent": "Every Traveller",
+      "body": "Each package is fully customisable — these are starting points. Tell us your dates and we'll send a tailored, all-in quote.",
+      "promiseKicker": "The Prithvi Holidays Promise",
+      "promiseTitle": "Why Book",
+      "promiseAccent": "With Us",
+      "features": [
+        {
+          "icon": "bi bi-sliders",
+          "title": "Fully Customisable",
+          "text": "Every itinerary is shaped around your dates, pace and interests."
+        },
+        {
+          "icon": "bi bi-cash-coin",
+          "title": "Transparent Quotes",
+          "text": "One clear all-in price after we design your trip — no hidden costs."
+        },
+        {
+          "icon": "bi bi-people",
+          "title": "Private Guides",
+          "text": "Local, knowledgeable guides across all three states."
+        },
+        {
+          "icon": "bi bi-headset",
+          "title": "24/7 Support",
+          "text": "A real human on call throughout your journey."
+        }
+      ]
+    },
+    "adventures": {
+      "title": "Adventures",
+      "image": "images/jogfalls.jpg",
+      "kicker": "For the Bold",
+      "headingTitle": "Unforgettable",
+      "headingAccent": "Experiences",
+      "body": "Go beyond the postcard — these are the moments that rewrite what you thought a South India trip could be."
+    },
+    "about": {
+      "title": "About Us",
+      "image": "images/mysuru.jpg",
+      "storyKicker": "Our Story",
+      "storyTitle": "A South India travel studio built on",
+      "storyAccent": "wonder &amp; care",
+      "storyBody": "Prithvi Holidays began with a simple belief: the best journeys aren't booked, they're designed. For over a decade we've paired deep local knowledge of South India with concierge-level attention to craft trips that feel made-to-measure — because they are.\n\nFrom your first daydream to your final sunset, a dedicated travel designer walks every step with you.",
+      "storyImage": "images/kodagu.jpg",
+      "badgeNumber": "3+",
+      "badgeLabel": "Years exploring<br>every corner of South India",
+      "skills": [
+        {
+          "label": "Personalised Itineraries",
+          "value": 95
+        },
+        {
+          "label": "South India Expertise",
+          "value": 92
+        },
+        {
+          "label": "Traveller Satisfaction",
+          "value": 98
+        }
+      ],
+      "trustKicker": "Why People Trust Us",
+      "trustTitle": "Care in",
+      "trustAccent": "Every Detail",
+      "features": [
+        {
+          "icon": "bi bi-compass",
+          "title": "Local Experts",
+          "text": "guides born across South India who know every fort, falls and backroad."
+        },
+        {
+          "icon": "bi bi-shield-check",
+          "title": "Safe Travel",
+          "text": "Vetted stays and 24/7 on-trip support for total peace of mind."
+        },
+        {
+          "icon": "bi bi-tag",
+          "title": "Best Prices",
+          "text": "Direct local tie-ups mean great value with no middle-man markup."
+        },
+        {
+          "icon": "bi bi-headset",
+          "title": "24/7 Support",
+          "text": "A real human on call throughout your journey, day or night."
+        }
+      ],
+      "teamKicker": "Our Team",
+      "teamTitle": "The People Behind",
+      "teamAccent": "Your Journey",
+      "team": [
+        {
+          "id": "team-1",
+          "name": "Kishor Prithvi",
+          "role": "Founder &amp; CEO",
+          "photo": "images/founder.png",
+          "linkedin": "#",
+          "instagram": "#",
+          "twitter": "#"
+        }
+      ],
+      "stats": [
+        {
+          "id": "stat-1",
+          "value": 60,
+          "suffix": "+",
+          "label": "Karnataka Spots",
+          "enabled": true
+        },
+        {
+          "id": "stat-2",
+          "value": 24000,
+          "suffix": "+",
+          "label": "Happy Travellers",
+          "enabled": true
+        },
+        {
+          "id": "stat-3",
+          "value": 98,
+          "suffix": "%",
+          "label": "Would Return",
+          "enabled": true
+        },
+        {
+          "id": "stat-4",
+          "value": 3,
+          "suffix": "+",
+          "label": "Years of Trips",
+          "enabled": true
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "image": "images/ombeach.jpg",
+      "kicker": "Get in Touch",
+      "headingTitle": "Let's plan something",
+      "headingAccent": "unforgettable",
+      "body": "Tell us a little about your dream South India trip and a travel designer will be in touch within one business day.",
+      "successMessage": "Thank you! Your enquiry is on its way — we'll reply within one business day."
+    }
+  },
+  "cta": {
+    "kicker": "Begin Today",
+    "title": "Your Next",
+    "accent": "Adventure",
+    "titleAfter": "Starts Here",
+    "body": "Tell us where in South India your heart wants to wander — our travel designers craft the rest, down to the last sunset.",
+    "image": "images/nandihills.jpg",
+    "primaryButton": "Plan Your Trip",
+    "primaryButtonLink": "contact.html",
+    "secondaryButton": "Talk to an Expert",
+    "secondaryButtonLink": "tel:+918220136068"
+  },
+  "footer": {
+    "about": "South India travel specialists crafting personalised journeys across Karnataka, Kerala &amp; Tamil Nadu &mdash; from Hampi's ruins to Kerala's backwaters and the temple cities of Tamil Nadu.",
+    "newsletterTitle": "Stay in the Know",
+    "newsletterBody": "Join our newsletter for South India escapes, seasonal offers and travel inspiration.",
+    "topPlaces": [
+      "Hampi Ruins",
+      "Coorg Hills",
+      "Munnar Tea Hills",
+      "Alleppey Backwaters",
+      "Ooty Hill Station",
+      "Meenakshi Temple, Madurai"
+    ],
+    "legal": "Privacy &middot; Terms &middot; Cookie Policy"
+  },
+  "stats": [
+    {
+      "id": "stat-1",
+      "value": 90,
+      "suffix": "+",
+      "label": "South India Spots",
+      "enabled": true
+    },
+    {
+      "id": "stat-2",
+      "value": 24000,
+      "suffix": "+",
+      "label": "Happy Travellers",
+      "enabled": true
+    },
+    {
+      "id": "stat-3",
+      "value": 98,
+      "suffix": "%",
+      "label": "Would Return",
+      "enabled": true
+    },
+    {
+      "id": "stat-4",
+      "value": 3,
+      "suffix": "+",
+      "label": "Years of Trips",
+      "enabled": true
+    }
+  ],
+  "nav": [
+    {
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "label": "Destinations",
+      "href": "destinations.html"
+    },
+    {
+      "label": "Packages",
+      "href": "packages.html"
+    },
+    {
+      "label": "Adventures",
+      "href": "adventures.html"
+    },
+    {
+      "label": "About Us",
+      "href": "about.html"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html"
+    }
+  ],
+  "navCta": {
+    "label": "Book Now",
+    "href": "contact.html"
+  },
+  "seo": {
+    "titleSuffix": "Prithvi Holidays",
+    "description": "Discover incredible destinations across India with Prithvi Holidays — your trusted travel specialists. Himalayas, Rajasthan, Kerala, Goa, Ladakh and more.",
+    "ogImage": "images/hampi.jpg",
+    "siteUrl": ""
+  },
+  "enquiry": {
+    "endpoint": "",
+    "successTitle": "Thank you! Your enquiry is on its way",
+    "successBody": "We'll reply within one business day.",
+    "note": "Leave endpoint empty to store enquiries in the visitor's browser. Set it to a Formspree / Google Apps Script / serverless URL to receive them live."
+  },
+  "updatedAt": "2026-08-27T00:00:00.000Z"
+}

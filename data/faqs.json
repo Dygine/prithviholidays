@@ -1,0 +1,66 @@
+[
+  {
+    "id": "faq-1",
+    "question": "How far in advance should I book?",
+    "answer": "Four to six weeks is comfortable for most South India trips. Peak season (October to February) and holiday weekends fill earlier, particularly in Coorg, Ooty and Munnar, so eight weeks is safer if your dates are fixed.",
+    "published": true,
+    "sort": 0,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-2",
+    "question": "Are your packages fixed, or can I change them?",
+    "answer": "Every itinerary on this site is a starting point. Add days, drop a city, upgrade a hotel or slow the pace down — we rebuild the plan and re-quote it, at no extra design cost.",
+    "published": true,
+    "sort": 1,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-3",
+    "question": "Why don't you show prices on the website?",
+    "answer": "Because an honest price depends on your dates, group size and the standard of hotel you want. Rather than advertise a number that changes at booking, we send one clear all-in quote within a business day of your enquiry.",
+    "published": true,
+    "sort": 2,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-4",
+    "question": "What does an all-in quote include?",
+    "answer": "Accommodation, daily breakfast, a private air-conditioned vehicle with driver, all transfers and sightseeing in the itinerary, tolls, parking and fuel, and 24/7 support while you travel. Flights, entry fees and meals not listed are quoted separately so you can see exactly what you are paying for.",
+    "published": true,
+    "sort": 3,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-5",
+    "question": "Do you arrange trips for families with young children?",
+    "answer": "Often. We shorten driving days, pick hotels with pools and space to run around, and build in unstructured afternoons. Tell us the ages when you enquire and the plan is shaped around them.",
+    "published": true,
+    "sort": 4,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-6",
+    "question": "Is it safe to travel in the monsoon?",
+    "answer": "Yes, with the right route. June to September is when the Western Ghats look their best — Jog Falls, Athirappilly and the Coorg hills are extraordinary. We avoid exposed treks and remote ghat roads in heavy rain and keep the itinerary flexible.",
+    "published": true,
+    "sort": 5,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-7",
+    "question": "How do payments work?",
+    "answer": "An advance confirms your booking and the balance is due before departure. Exact terms are on your quote, and we accept bank transfer and UPI.",
+    "published": true,
+    "sort": 6,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  },
+  {
+    "id": "faq-8",
+    "question": "What if I need to cancel?",
+    "answer": "Cancellation terms are set out on every quote before you pay anything. They depend on the hotels and transport we have blocked for you, so we always put them in writing up front.",
+    "published": true,
+    "sort": 7,
+    "updatedAt": "2026-08-27T00:00:00.000Z"
+  }
+]
