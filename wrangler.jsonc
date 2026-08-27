@@ -1,22 +1,22 @@
 {
-  // Cloudflare Workers config. The site is static assets plus one API route.
-  //
-  // Secrets are NOT set here — that would put them in git. Set them with:
-  //   npx wrangler secret put GITHUB_TOKEN
-  //   npx wrangler secret put ADMIN_PASSWORD
-  // or in the dashboard under Settings -> Variables and Secrets.
-  "name": "prithvi-holidays",
+  "name": "prithviholidays",
+
   "compatibility_date": "2026-08-25",
   "compatibility_flags": ["nodejs_compat"],
   "main": "worker.mjs",
+
+  "vars": {
+    "GITHUB_REPO": "Dygine/prithviholidays",
+    "GITHUB_BRANCH": "main"
+  },
+
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page",
-    // The Worker must see /api/* before the asset handler tries to find a
-    // file with that name and returns a 404 instead.
     "run_worker_first": ["/api/*"]
   },
+
   "observability": { "enabled": true }
 }
