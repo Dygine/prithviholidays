@@ -7,7 +7,7 @@
   "email": "prithviholidays03@gmail.com",
   "officeHours": "Mon &ndash; Sat, 9:00 &ndash; 18:00 (IST)",
   "address": "Rk ring road,Hosur-635109",
-  "instagram": "#",
+  "instagram": "https://www.instagram.com/prithvi_holidays?igsi=bHppZDBrNm55MjY4",
   "facebook": "#",
   "twitter": "#",
   "youtube": "#",
@@ -362,5 +362,5 @@
     "successBody": "We'll reply within one business day.",
     "note": "Leave endpoint empty to store enquiries in the visitor's browser. Set it to a Formspree / Google Apps Script / serverless URL to receive them live."
   },
-  "updatedAt": "2026-08-27T12:15:26.089Z"
+  "updatedAt": "2026-08-29T12:28:20.570Z"
 }
